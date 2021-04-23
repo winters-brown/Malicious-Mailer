@@ -1,0 +1,142 @@
+<!--
+Author: Joshua Winters-Brown
+index.html (c) 2021
+Description: description
+Created:  2021-04-23T14:51:37.156Z
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="image/jpg" href="/static/favicon.svg" />
+		<title>Malicious Emailer</title>
+
+		<!-- Latest compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+			integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Optional theme -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+			integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+			crossorigin="anonymous"
+		></script>
+
+		<style>
+			body {
+				background-color: rgb(33, 33, 33);
+			}
+
+			nav {
+				background-color: rgb(40, 40, 40);
+			}
+
+			nav h3 {
+				color: #ffffff;
+				margin-left: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: baseline;
+			}
+
+			.fillable {
+				width: 70rem;
+				height: auto;
+				padding: 2rem;
+				overflow: hidden;
+
+				border-radius: 1rem;
+				color: #ffffff;
+				background-color: rgb(40, 40, 40);
+			}
+
+			.fillable input {
+				width: 100%;
+				color: white;
+				background-color: rgb(60, 60, 60);
+			}
+
+			.fillable input[type="submit"] {
+				width: 100%;
+				background-color: rgb(60, 60, 60);
+			}
+
+			.fillable input:hover {
+				width: 100%;
+				color: white;
+				background-color: rgb(80, 80, 80);
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar bg-dark">
+			<h3>Malicious Mailer</h3>
+		</nav>
+		<div class="container">
+			<div class="fillable">
+				<form action="/email" enctype="multipart/form-data" method="POST">
+					<div class="col d-flex justify-content-center">
+						<div class="form-group">
+							<label for="sender">Sender</label>
+							<input
+								type="email"
+								class="form-control"
+								id="sender"
+								name="sender"
+								placeholder="threat_actor@supersuspicious.com"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<label for="reciever">Reciever</label>
+							<input
+								type="email"
+								class="form-control"
+								id="reciever"
+								name="reciever"
+								placeholder="vulnerable_target@bigcompany.org"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<label for="subject">Subject</label>
+							<input
+								type="text"
+								class="form-control"
+								id="subject"
+								name="subject"
+								placeholder="Your limited warranty is about to expire!"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<label for="maliciousFile">HTML File</label>
+							<input type="file" class="btn" accept=".html" id="file" name="file" />
+						</div>
+						<input type="submit" value="Send" class="btn" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

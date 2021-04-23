@@ -1,0 +1,27 @@
+<!--
+Author: Joshua Winters-Brown
+hidMalicious.html (c) 2021
+Description: Send this html in an email to hide the external banner that would generally pop up.
+Created:  2021-04-23T12:02:59.585Z
+-->
+<!DOCTYPE html>
+	<body>
+		<div class="phish">
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque beatae vel enim nulla ratione.
+			Molestiae iure minus exercitationem quis iste corporis, voluptatum voluptatibus. Totam doloribus
+			perspiciatis dolorum, a eum debitis!
+		</div>
+	</body>
+
+	<head>
+		<style>
+			body {
+				display: none;
+			}
+			.phish {
+				display: block !important;
+			}
+		</style>
+		<div class="phish">Test</div>
+	</head>
+</html>
