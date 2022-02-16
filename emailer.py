@@ -30,7 +30,7 @@ except:
     print("Could not connect to email server")
 
 sender = "yourmomscool@unorthodox.com"
-reciever = "2693596699@mymetropcs.com"
+reciever = ""
 
 # Create message container - the correct MIME type is multipart/alternative.
 contents = MIMEMultipart('alternative')
